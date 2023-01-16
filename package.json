@@ -1,0 +1,21 @@
+{
+  "name": "profile-image-generator",
+  "version": "1.0.0",
+  "description": "Profile image generator for pink*",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "repository": "git@github.com:pink-tubs/profile-image-generator.git",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.8.2",
+    "parcel": "^2.8.2"
+  },
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  }
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <title>Pink* profile image generator</title>
+    <link rel="stylesheet" href="styles.scss" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main>
+        <h1>Pink* profile image generator</h1>
+        <div id="sharepic">
+            <img id="image">
+        </div>
+        <div class="option">
+            <label for="file-upload" class="button">Upload profile image <small>(.jpg, .png)</small></label>
+            <input type="file" id="file-upload" accept="image/*">
+        </div>
+        <div class="option">
+            <label for="zoom">Zoom</label>
+            <input type="range"id="zoom" min="100" max="200" value="100">
+        </div>
+        <button type="button" id="save-image">Download</button>
+    </main>
+  </body>
+</html>
