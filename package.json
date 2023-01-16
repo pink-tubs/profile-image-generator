@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build --dist-dir profile-image-generator"
   },
   "dependencies": {
     "html2canvas": "^1.4.1"
