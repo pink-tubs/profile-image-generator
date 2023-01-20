@@ -10,18 +10,32 @@
   <body>
     <main>
         <h1>Pink* profile image generator</h1>
-        <div id="sharepic">
+        <div class="sharepic-wrapper">
+          <div id="sharepic">
             <img id="image">
+            <img src="profilbild_vorlage_quadratisch.png" class="overlay" id="default">
+            <img src="profilbild_vorlage_rund.png" class="overlay" id="round">
+          </div>
         </div>
         <div class="option">
-            <label for="file-upload" class="button">Upload profile image <small>(.jpg, .png)</small></label>
-            <input type="file" id="file-upload" accept="image/*">
+          <label for="file-upload" class="button">Upload profile image <small>(.jpg, .png)</small></label>
+          <input type="file" id="file-upload" accept="image/*">
+        </div>
+        <div class="option">
+          <form id="shape_selection">
+            <input type="radio" id="shape_1" value="default" name="shape" checked>
+            <label for="shape_1">Quadratisch</label>
+            <input type="radio" id="shape_2" value="round" name="shape">
+            <label for="shape_2">Rund</label>
+          </form>
         </div>
         <div class="option">
             <label for="zoom">Zoom</label>
-            <input type="range"id="zoom" min="100" max="200" value="100">
+            <input type="range"id="zoom" min="80" max="200" value="100">
         </div>
-        <button type="button" id="save-image">Download</button>
+        <div class="option">
+          <button type="button" id="save-image">Download</button>
+        </div>
     </main>
   </body>
 </html>

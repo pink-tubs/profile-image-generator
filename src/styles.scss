@@ -1,7 +1,11 @@
-$primary-color: pink;
+$primary-color: #e72b71;
+
+* {box-sizing: border-box;}
 
 html {
     font-family: sans-serif;
+    background: #333;
+    color: white;
 }
 
 body {
@@ -16,11 +20,17 @@ main {
     align-items: flex-start;
 }
 
+h1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 #sharepic {
     $pattern-color-1: gray;
     $pattern-color-2: white;
-    width: 100%;
-    overflow: auto;
+    width: 100vw;
+    overflow: scroll;
+    position: relative;
     background-image:
         repeating-linear-gradient(
             45deg,
@@ -49,15 +59,10 @@ img {
     display: block;
 }
 
-label {
-    display: block;
-    margin-bottom: 0.25em;
-}
-
 input,
 button {
     accent-color: $primary-color;
-    display: block;
+    color: white;
 }
 
 input[type="file"] {
@@ -77,4 +82,31 @@ button {
     &:hover {
         background-color: darken($primary-color, 10);
     }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: inherit;
+    width: 100%;
+    pointer-events: none;
+}
+
+#round {
+    display: none;
+} 
+
+.round #default {
+    display: none;
+}
+.round #round {
+    display: block;
+} 
+
+.option {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }

@@ -1,7 +1,7 @@
 import html2canvas from "html2canvas";
 
-const width = 500;
-const height = 500;
+const width = 1080;
+const height = 1080;
 
 const init = () => {
     const target = document.getElementById("sharepic");
@@ -43,11 +43,14 @@ const saveImage = () => {
     const target = document.getElementById("sharepic");
     const scale = width / target.getBoundingClientRect().width;
 
+    target.style.overflow = "hidden";
+
     html2canvas(target, {
         scale: scale
-    }).then(canvas => 
-        startDownload(canvas.toDataURL(), 'pink-profile-image.png')
-    );
+    }).then(canvas => {
+        startDownload(canvas.toDataURL(), 'pink-profile-image.png');
+        target.style.overflow = "scroll";
+    });
 }
 
 const startDownload = (uri, filename) => {
@@ -81,8 +84,28 @@ const setZoom = () => {
     }
 }
 
+const fixOverlayPosition = ({target}) => {
+    document.querySelectorAll(".overlay").forEach((element) => {
+        element.style.transform = `translateX(${target.scrollLeft}px) translateY(${target.scrollTop}px)`;
+    });
+}
+
+const changeShape = ({target}) => {
+    if (target.name == "shape") {
+        const roundClass = "round";
+
+        if (target.value == roundClass) {
+            document.getElementById("sharepic").classList.add(roundClass);
+        } else {
+            document.getElementById("sharepic").classList.remove(roundClass);
+        }
+    }
+}
+
 document.getElementById("save-image").addEventListener("click", saveImage);
 document.getElementById("file-upload").addEventListener("change", loadFile);
 document.getElementById("zoom").addEventListener("change", setZoom);
+document.getElementById("sharepic").addEventListener("scroll", fixOverlayPosition)
+document.getElementById("shape_selection").addEventListener("change", changeShape);
 
 init();
