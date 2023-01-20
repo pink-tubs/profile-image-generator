@@ -5,7 +5,6 @@ const height = 1080;
 
 const init = () => {
     const target = document.getElementById("sharepic");
-    target.style["max-width"] = `${width}px`;
     target.style["aspect-ratio"] = width / height;
 }
 
